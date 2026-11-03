@@ -29,7 +29,7 @@ const SITE = {
 };
 ```
 
-- `downloadUrl`：试用版下载地址，当前指向站点仓库的 Releases。需要把 `dist/PDFPlusWatermark-v1.3.0-win64.zip` 上传到这个仓库的 Release，链接才会生效。
+- `downloadUrl`：试用版下载地址，当前指向站点仓库的 Releases。`v1.3.0` 安装包已上传，`/releases/latest` 会自动跳到该版本。
 - `contactEmail`：个人版 / 工作室版 / 机构版的购买咨询邮箱。购买按钮会自动带上版本名称和机器码提示。
 - `githubUrl`：页脚 GitHub 链接。
 - `siteUrl`：页脚显示的站点地址，同时会更新链接。
@@ -56,15 +56,9 @@ git push -u origin main
 4. 打开仓库 **Settings → Pages**，Source 选择 **Deploy from a branch**，Branch 选择 **main**，目录选择 **/(root)**，保存。
 5. 等待一两分钟，访问 `https://xudadiao102.github.io/`。
 
-> 本目录 `site/` 已经初始化 Git 仓库（`main`），并配置好 remote：
-> `https://github.com/xudadiao102/xudadiao102.github.io.git`。
-> 如果直接使用这个目录，只需在 GitHub 创建同名仓库后执行：
->
-> ```bat
-> git -C D:\pdf++\site push -u origin main
-> ```
->
-> 当前环境没有登录 GitHub，所以还没有执行 push。
+> 本目录 `site/` 已初始化为 Git 仓库（`main`），remote 指向
+> `https://github.com/xudadiao102/xudadiao102.github.io.git`，代码已推送。
+> Pages 已启用并构建成功，线上地址：`https://xudadiao102.github.io/`。
 
 ### 可选：用 GitHub Actions 部署
 
@@ -78,11 +72,11 @@ git push -u origin main
 
 ## 发布清单
 
-- [ ] 创建 `xudadiao102.github.io` 仓库
-- [ ] 上传 `dist/PDFPlusWatermark-v1.3.0-win64.zip` 到 Releases
-- [ ] 推送 `site/` 内容到仓库根目录
-- [ ] Pages 选择 `main` / `/(root)`
-- [ ] 打开站点检查下载按钮、购买邮件、移动端布局
+- [x] 创建 `xudadiao102.github.io` 仓库
+- [x] 上传 `dist/PDFPlusWatermark-v1.3.0-win64.zip` 到 Releases
+- [x] 推送 `site/` 内容到仓库根目录
+- [x] Pages 选择 `main` / `/(root)`
+- [x] 打开站点检查下载按钮、购买邮件、移动端布局
 
 ## 文件结构
 
