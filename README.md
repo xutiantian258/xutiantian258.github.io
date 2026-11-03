@@ -29,7 +29,7 @@ const SITE = {
 };
 ```
 
-- `downloadUrl`：试用版下载地址，当前指向站点仓库的 Releases。需要把 `dist/PDFPlusWatermark-v1.2.1-win64.zip` 上传到这个仓库的 Release，链接才会生效。
+- `downloadUrl`：试用版下载地址，当前指向站点仓库的 Releases。需要把 `dist/PDFPlusWatermark-v1.3.0-win64.zip` 上传到这个仓库的 Release，链接才会生效。
 - `contactEmail`：个人版 / 工作室版 / 机构版的购买咨询邮箱。购买按钮会自动带上版本名称和机器码提示。
 - `githubUrl`：页脚 GitHub 链接。
 - `siteUrl`：页脚显示的站点地址，同时会更新链接。
@@ -79,7 +79,7 @@ git push -u origin main
 ## 发布清单
 
 - [ ] 创建 `xudadiao102.github.io` 仓库
-- [ ] 上传 `dist/PDFPlusWatermark-v1.2.1-win64.zip` 到 Releases
+- [ ] 上传 `dist/PDFPlusWatermark-v1.3.0-win64.zip` 到 Releases
 - [ ] 推送 `site/` 内容到仓库根目录
 - [ ] Pages 选择 `main` / `/(root)`
 - [ ] 打开站点检查下载按钮、购买邮件、移动端布局
