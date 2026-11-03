@@ -56,6 +56,16 @@ git push -u origin main
 4. 打开仓库 **Settings → Pages**，Source 选择 **Deploy from a branch**，Branch 选择 **main**，目录选择 **/(root)**，保存。
 5. 等待一两分钟，访问 `https://xudadiao102.github.io/`。
 
+> 本目录 `site/` 已经初始化 Git 仓库（`main`），并配置好 remote：
+> `https://github.com/xudadiao102/xudadiao102.github.io.git`。
+> 如果直接使用这个目录，只需在 GitHub 创建同名仓库后执行：
+>
+> ```bat
+> git -C D:\pdf++\site push -u origin main
+> ```
+>
+> 当前环境没有登录 GitHub，所以还没有执行 push。
+
 ### 可选：用 GitHub Actions 部署
 
 仓库根目录已包含 `.github/workflows/deploy-site.yml`。如果使用本项目的完整仓库（而不是只复制 `site/`），可以：
