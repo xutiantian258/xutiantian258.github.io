@@ -2,8 +2,8 @@
 
 零依赖静态落地页，用于展示 PDF++ 水印工坊的卖点与价格。
 
-- 站点地址：`https://xudadiao102.github.io/`
-- 仓库地址：`https://github.com/xudadiao102/xudadiao102.github.io`
+- 站点地址：`https://xutiantian258.github.io/`
+- 仓库地址：`https://github.com/xutiantian258/xutiantian258.github.io`
 - 购买咨询：`xudadiao102@gmail.com`
 
 ## 本地预览
@@ -22,10 +22,10 @@ python -m http.server 4173 --directory site
 
 ```js
 const SITE = {
-  downloadUrl: "https://github.com/xudadiao102/xudadiao102.github.io/releases/latest",
+  downloadUrl: "https://github.com/xutiantian258/xutiantian258.github.io/releases/latest",
   contactEmail: "xudadiao102@gmail.com",
-  githubUrl: "https://github.com/xudadiao102/xudadiao102.github.io",
-  siteUrl: "https://xudadiao102.github.io"
+  githubUrl: "https://github.com/xutiantian258/xutiantian258.github.io",
+  siteUrl: "https://xutiantian258.github.io"
 };
 ```
 
@@ -34,13 +34,13 @@ const SITE = {
 - `githubUrl`：页脚 GitHub 链接。
 - `siteUrl`：页脚显示的站点地址，同时会更新链接。
 
-`index.html` 里的 canonical、`og:url` 和页脚域名也已同步为 `xudadiao102.github.io`。
+`index.html` 里的 canonical、`og:url` 和页脚域名也已同步为 `xutiantian258.github.io`。
 
-## 部署为 `xudadiao102.github.io`
+## 部署为 `xutiantian258.github.io`
 
-GitHub 用户主页仓库必须叫 `xudadiao102.github.io`，并且站点文件要放在仓库根目录。
+GitHub 用户主页仓库必须叫 `xutiantian258.github.io`，并且站点文件要放在仓库根目录。
 
-1. 在 GitHub 新建公开仓库 `xudadiao102.github.io`。
+1. 在 GitHub 新建公开仓库 `xutiantian258.github.io`。
 2. 把 **`site/` 目录里面的内容**（不是 `site` 文件夹本身）复制到仓库根目录。
 3. 在仓库根目录执行：
 
@@ -49,16 +49,16 @@ git init
 git add .
 git commit -m "Add PDF++ landing page"
 git branch -M main
-git remote add origin https://github.com/xudadiao102/xudadiao102.github.io.git
+git remote add origin https://github.com/xutiantian258/xutiantian258.github.io.git
 git push -u origin main
 ```
 
 4. 打开仓库 **Settings → Pages**，Source 选择 **Deploy from a branch**，Branch 选择 **main**，目录选择 **/(root)**，保存。
-5. 等待一两分钟，访问 `https://xudadiao102.github.io/`。
+5. 等待一两分钟，访问 `https://xutiantian258.github.io/`。
 
 > 本目录 `site/` 已初始化为 Git 仓库（`main`），remote 指向
-> `https://github.com/xudadiao102/xudadiao102.github.io.git`，代码已推送。
-> Pages 已启用并构建成功，线上地址：`https://xudadiao102.github.io/`。
+> `https://github.com/xutiantian258/xutiantian258.github.io.git`，代码已推送。
+> Pages 已启用并构建成功，线上地址：`https://xutiantian258.github.io/`。
 
 ### 可选：用 GitHub Actions 部署
 
@@ -68,11 +68,11 @@ git push -u origin main
 2. **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
 3. 在 Actions 页面等待 `Deploy site` 完成。
 
-仓库名必须是 `xudadiao102.github.io`，否则站点会部署到 `https://xudadiao102.github.io/<repo>/`。
+仓库名必须是 `xutiantian258.github.io`，否则站点会部署到 `https://xutiantian258.github.io/<repo>/`。
 
 ## 发布清单
 
-- [x] 创建 `xudadiao102.github.io` 仓库
+- [x] 创建 `xutiantian258.github.io` 仓库
 - [x] 上传 `dist/PDFPlusWatermark-v1.3.0-win64.zip` 到 Releases
 - [x] 推送 `site/` 内容到仓库根目录
 - [x] Pages 选择 `main` / `/(root)`

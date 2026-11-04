@@ -1,10 +1,10 @@
 /* PDF++ 水印工坊 — small, dependency-free page script.
    Replace the four values below before publishing. */
 const SITE = {
-  downloadUrl: "https://github.com/xudadiao102/xudadiao102.github.io/releases/latest",
+  downloadUrl: "https://github.com/xutiantian258/xutiantian258.github.io/releases/latest",
   contactEmail: "xudadiao102@gmail.com",
-  githubUrl: "https://github.com/xudadiao102/xudadiao102.github.io",
-  siteUrl: "https://xudadiao102.github.io"
+  githubUrl: "https://github.com/xutiantian258/xutiantian258.github.io",
+  siteUrl: "https://xutiantian258.github.io"
 };
 
 (() => {
