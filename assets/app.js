@@ -53,6 +53,8 @@ const SITE = {
   const orderButton = document.querySelector("[data-copy-order]");
   const status = document.querySelector("[data-copy-status]");
   const closeButton = document.querySelector("[data-dialog-close]");
+  const tabs = Array.from(document.querySelectorAll("[data-contact-tab]"));
+  const panels = Array.from(document.querySelectorAll("[data-contact-panel]"));
   const emailTexts = document.querySelectorAll("[data-contact-email]");
   const emailLabelDefault = emailLabel ? emailLabel.textContent : "";
   const orderLabelDefault = orderButton ? orderButton.textContent : "";
@@ -96,6 +98,19 @@ const SITE = {
     if (orderButton) orderButton.textContent = orderLabelDefault;
   }
 
+  function selectTab(name, focusTab = false) {
+    if (!tabs.length) return;
+    tabs.forEach((tab) => {
+      const active = tab.getAttribute("data-contact-tab") === name;
+      tab.setAttribute("aria-selected", String(active));
+      tab.tabIndex = active ? 0 : -1;
+      if (active && focusTab) tab.focus({ preventScroll: true });
+    });
+    panels.forEach((panel) => {
+      panel.hidden = panel.getAttribute("data-contact-panel") !== name;
+    });
+  }
+
   function setDialogContent(plan, price) {
     currentPlan = plan || "";
     currentPrice = price || "";
@@ -133,6 +148,7 @@ const SITE = {
     window.clearTimeout(closeTimer);
     resetCopyUi();
     setDialogContent(plan, price);
+    selectTab("email");
     dialog.classList.remove("is-closing");
 
     if (!wasOpen) {
@@ -186,6 +202,30 @@ const SITE = {
   if (closeButton) {
     closeButton.addEventListener("click", closeDialog);
   }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      selectTab(tab.getAttribute("data-contact-tab"));
+    });
+
+    tab.addEventListener("keydown", (event) => {
+      const key = event.key;
+      if (key !== "ArrowLeft" && key !== "ArrowRight" && key !== "Home" && key !== "End") {
+        return;
+      }
+      event.preventDefault();
+      let nextIndex;
+      if (key === "Home") {
+        nextIndex = 0;
+      } else if (key === "End") {
+        nextIndex = tabs.length - 1;
+      } else {
+        const direction = key === "ArrowRight" ? 1 : -1;
+        nextIndex = (index + direction + tabs.length) % tabs.length;
+      }
+      selectTab(tabs[nextIndex].getAttribute("data-contact-tab"), true);
+    });
+  });
 
   document.querySelectorAll("[data-plan]").forEach((button) => {
     button.addEventListener("click", () => {

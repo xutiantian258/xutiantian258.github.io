@@ -577,24 +577,41 @@
         <span class="contact-plan-price" data-dialog-plan-price></span>
       </div>
 
-      <button class="email-copy" type="button" data-copy-email aria-label="复制邮箱 ykxu_1@163.com" autofocus>
-        <span class="email-copy-label">邮箱</span>
-        <strong data-contact-email>ykxu_1@163.com</strong>
-        <span class="email-copy-action" data-copy-label>点击复制</span>
-      </button>
-      <p class="contact-status" role="status" aria-live="polite" data-copy-status></p>
+      <div class="contact-tabs" role="tablist" aria-label="选择联系方式">
+        <button class="contact-tab" id="contact-tab-email" type="button" role="tab" aria-selected="true" aria-controls="contact-panel-email" data-contact-tab="email">邮箱</button>
+        <button class="contact-tab" id="contact-tab-wechat" type="button" role="tab" aria-selected="false" aria-controls="contact-panel-wechat" tabindex="-1" data-contact-tab="wechat">微信</button>
+      </div>
 
-      <div class="contact-actions">
-        <a class="btn btn-outline" href="https://mail.163.com/" target="_blank" rel="noopener">打开 163 邮箱</a>
-        <button class="btn btn-primary" type="button" data-copy-order>复制购买信息</button>
+      <div class="contact-panel" id="contact-panel-email" role="tabpanel" aria-labelledby="contact-tab-email" data-contact-panel="email">
+        <button class="email-copy" type="button" data-copy-email aria-label="复制邮箱 ykxu_1@163.com" autofocus>
+          <span class="email-copy-label">邮箱</span>
+          <strong data-contact-email>ykxu_1@163.com</strong>
+          <span class="email-copy-action" data-copy-label>点击复制</span>
+        </button>
+        <p class="contact-status" role="status" aria-live="polite" data-copy-status></p>
+
+        <div class="contact-actions">
+          <a class="btn btn-outline" href="https://mail.163.com/" target="_blank" rel="noopener">打开 163 邮箱</a>
+          <button class="btn btn-primary" type="button" data-copy-order>复制购买信息</button>
+        </div>
+      </div>
+
+      <div class="contact-panel" id="contact-panel-wechat" role="tabpanel" aria-labelledby="contact-tab-wechat" data-contact-panel="wechat" hidden>
+        <div class="wechat-panel">
+          <img class="wechat-qr" src="assets/wechat-qr.jpg" alt="微信二维码" width="480" height="480" loading="lazy" decoding="async">
+          <div class="wechat-copy">
+            <strong>扫码添加微信</strong>
+            <p>备注「PDF++」，发送版本与机器码即可。</p>
+          </div>
+        </div>
       </div>
 
       <div class="contact-steps">
-        <span><b>1</b>复制邮箱</span>
+        <span><b>1</b>选择方式</span>
         <span><b>2</b>发送版本与机器码</span>
         <span><b>3</b>收到激活码</span>
       </div>
-      <p class="contact-note">复制后到 163 邮箱或其他邮箱 App 中粘贴收件人即可。</p>
+      <p class="contact-note">邮箱或微信任选一种，发送版本与机器码即可。</p>
     </div>
   </dialog>
 

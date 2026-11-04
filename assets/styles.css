@@ -2141,6 +2141,75 @@ body.dialog-open {
   white-space: nowrap;
 }
 
+.contact-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px;
+  margin-top: 18px;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--paper);
+}
+
+.contact-tab {
+  min-height: 34px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 160ms var(--ease),
+    color 160ms var(--ease),
+    box-shadow 160ms var(--ease);
+}
+
+.contact-tab[aria-selected="true"] {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 1px 3px rgba(23, 24, 26, 0.12);
+}
+
+.contact-panel {
+  margin-top: 14px;
+}
+
+.contact-panel[hidden] {
+  display: none;
+}
+
+.wechat-panel {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 2px 0;
+}
+
+.wechat-qr {
+  width: 170px;
+  height: 170px;
+  flex: none;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  object-fit: contain;
+}
+
+.wechat-copy strong {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.wechat-copy p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
 .email-copy {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -2148,7 +2217,7 @@ body.dialog-open {
   align-items: center;
   gap: 3px 12px;
   width: 100%;
-  margin-top: 18px;
+  margin-top: 0;
   padding: 15px 16px;
   border: 1px solid var(--line-strong);
   border-radius: 12px;
@@ -2478,6 +2547,10 @@ body.dialog-open {
     background: #fff;
   }
 
+  .contact-tab:hover {
+    color: var(--ink);
+  }
+
   .dialog-close:hover {
     background: var(--paper);
     color: var(--ink);
@@ -2786,6 +2859,15 @@ body.dialog-open {
   .email-copy strong {
     font-size: 16px;
   }
+
+  .wechat-panel {
+    gap: 14px;
+  }
+
+  .wechat-qr {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 @media (max-width: 460px) {
@@ -2886,6 +2968,16 @@ body.dialog-open {
 
   .contact-desc {
     font-size: 12.5px;
+  }
+
+  .wechat-panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wechat-qr {
+    width: 180px;
+    height: 180px;
   }
 }
 
