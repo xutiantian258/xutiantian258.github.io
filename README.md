@@ -30,7 +30,7 @@ const SITE = {
 ```
 
 - `downloadUrl`：试用版下载地址，当前指向站点仓库的 Releases。`v1.3.0` 安装包已上传，`/releases/latest` 会自动跳到该版本。
-- `contactEmail`：个人版 / 工作室版 / 机构版的购买咨询邮箱。点击购买按钮会打开站内联系弹窗，邮箱可一键复制，不再调用 `mailto:` 或 Outlook。
+- `contactEmail`：个人版 / 工作室版 / 机构版的购买咨询邮箱。点击购买按钮会打开站内联系弹窗，邮箱可一键复制。
 - `githubUrl`：页脚 GitHub 链接。
 - `siteUrl`：页脚显示的站点地址，同时会更新链接。
 

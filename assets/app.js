@@ -1,5 +1,4 @@
-/* PDF++ 水印工坊 — small, dependency-free page script.
-   Replace the four values below before publishing. */
+/* PDF++ 水印工坊 — small, dependency-free page script. */
 const SITE = {
   downloadUrl: "https://github.com/xutiantian258/xutiantian258.github.io/releases/latest",
   contactEmail: "ykxu_1@163.com",
