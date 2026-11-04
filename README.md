@@ -74,7 +74,7 @@ git push -u origin main
 ## 发布清单
 
 - [x] 创建 `xutiantian258.github.io` 仓库
-- [x] 上传 `dist/水印溯源-v1.4.0-win64.zip` 到 Releases
+- [x] 上传 `dist/WatermarkTrace-v1.4.0-win64.zip` 到 Releases
 - [x] 推送 `site/` 内容到仓库根目录
 - [x] Pages 选择 `main` / `/(root)`
 - [x] 打开站点检查下载按钮、购买邮件、移动端布局
