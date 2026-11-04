@@ -429,7 +429,7 @@
               <li><span class="check" aria-hidden="true">✓</span>永久使用</li>
               <li><span class="check" aria-hidden="true">✓</span>1 年免费更新</li>
             </ul>
-            <a class="btn btn-outline plan-cta" href="mailto:xudadiao102@gmail.com" data-plan="个人版">选择个人版</a>
+            <button class="btn btn-outline plan-cta" type="button" data-plan="个人版" data-price="¥98 买断">选择个人版</button>
           </article>
 
           <article class="plan plan-studio">
@@ -446,7 +446,7 @@
               <li><span class="check" aria-hidden="true">✓</span>2 年免费更新</li>
               <li><span class="check" aria-hidden="true">✓</span>优先技术支持</li>
             </ul>
-            <a class="btn btn-accent plan-cta" href="mailto:xudadiao102@gmail.com" data-plan="工作室版">选择工作室版</a>
+            <button class="btn btn-accent plan-cta" type="button" data-plan="工作室版" data-price="¥198 买断">选择工作室版</button>
           </article>
 
           <article class="plan plan-org">
@@ -462,15 +462,15 @@
               <li><span class="check" aria-hidden="true">✓</span>定制水印模板</li>
               <li><span class="check" aria-hidden="true">✓</span>专属部署支持</li>
             </ul>
-            <a class="btn btn-outline plan-cta" href="mailto:xudadiao102@gmail.com" data-plan="机构版">联系采购</a>
+            <button class="btn btn-outline plan-cta" type="button" data-plan="机构版" data-price="¥998 起">联系采购</button>
           </article>
         </div>
 
         <div class="pricing-notes">
           <p>价格为人民币含税价。老用户升级 ¥49–68，渠道代理另议。</p>
           <div class="buy-flow">
-            <span>1 复制机器码</span><i aria-hidden="true"></i>
-            <span>2 选择版本并付款</span><i aria-hidden="true"></i>
+            <span>1 复制邮箱</span><i aria-hidden="true"></i>
+            <span>2 提供版本与机器码</span><i aria-hidden="true"></i>
             <span>3 收到激活码，离线激活</span>
           </div>
         </div>
@@ -482,7 +482,7 @@
         <div class="faq-intro">
           <p class="eyebrow"><span class="eyebrow-dot"></span>常见问题</p>
           <h2>买之前，<br>你可能想知道。</h2>
-          <p>还有别的问题？<a href="mailto:xudadiao102@gmail.com" data-contact>写封邮件</a>，我们通常会在一个工作日内回复。</p>
+          <p>还有别的问题？<button class="inline-link" type="button" data-contact>联系我们</button>，我们通常会在一个工作日内回复。</p>
         </div>
 
         <div class="faq-list">
@@ -508,7 +508,7 @@
 
           <details class="faq-item" name="faq">
             <summary>试用版怎么获取？<span class="faq-icon" aria-hidden="true"></span></summary>
-            <div class="faq-body"><p>下载安装后，通过<a href="mailto:xudadiao102@gmail.com" data-contact>购买咨询邮箱</a>申请 7 天试用授权，收到激活码后即可使用全部功能与字体。确认效果后，购买任意正式版本即可继续使用。</p></div>
+            <div class="faq-body"><p>下载安装后，点击页面上的「购买咨询」复制邮箱，把机器码发给我申请 7 天试用授权，收到激活码后即可使用全部功能与字体。确认效果后，购买任意正式版本即可继续使用。</p></div>
           </details>
 
           <details class="faq-item" name="faq">
@@ -528,7 +528,7 @@
             免费试用
             <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.2 8h9.2M8.9 4.4 12.5 8l-3.6 3.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a class="btn btn-on-dark" href="mailto:xudadiao102@gmail.com" data-contact>购买咨询</a>
+          <button class="btn btn-on-dark" type="button" data-contact>购买咨询</button>
         </div>
         <p class="final-meta">Windows 10 / 11 · 约 71 MB · 离线激活</p>
       </div>
@@ -551,6 +551,7 @@
         <a href="#features">功能</a>
         <a href="#pricing">定价</a>
         <a href="#faq">常见问题</a>
+        <button class="footer-contact" type="button" data-contact>联系购买</button>
         <a href="https://github.com/xutiantian258/xutiantian258.github.io" target="_blank" rel="noopener" data-github>GitHub</a>
       </nav>
 
@@ -560,6 +561,43 @@
       </div>
     </div>
   </footer>
+
+  <dialog class="contact-dialog" data-contact-dialog aria-labelledby="contact-title" aria-describedby="contact-desc">
+    <div class="contact-card">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="关闭联系窗口">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.4 4.4 7.2 7.2m0-7.2-7.2 7.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+
+      <p class="eyebrow"><span class="eyebrow-dot"></span>购买与咨询</p>
+      <h2 class="contact-title" id="contact-title" data-dialog-title>联系 PDF++</h2>
+      <p class="contact-desc" id="contact-desc" data-dialog-desc>复制邮箱，说明你的问题或需要的版本，通常一个工作日内回复。</p>
+
+      <div class="contact-plan" data-dialog-plan hidden>
+        <span class="contact-plan-label">咨询版本</span>
+        <strong data-dialog-plan-name></strong>
+        <span class="contact-plan-price" data-dialog-plan-price></span>
+      </div>
+
+      <button class="email-copy" type="button" data-copy-email aria-label="复制邮箱 ykxu_1@163.com" autofocus>
+        <span class="email-copy-label">邮箱</span>
+        <strong data-contact-email>ykxu_1@163.com</strong>
+        <span class="email-copy-action" data-copy-label>点击复制</span>
+      </button>
+      <p class="contact-status" role="status" aria-live="polite" data-copy-status></p>
+
+      <div class="contact-actions">
+        <a class="btn btn-outline" href="https://mail.163.com/" target="_blank" rel="noopener">打开 163 邮箱</a>
+        <button class="btn btn-primary" type="button" data-copy-order>复制购买信息</button>
+      </div>
+
+      <div class="contact-steps">
+        <span><b>1</b>复制邮箱</span>
+        <span><b>2</b>发送版本与机器码</span>
+        <span><b>3</b>收到激活码</span>
+      </div>
+      <p class="contact-note">复制后到 163 邮箱或其他邮箱 App 中粘贴收件人即可，不会自动打开 Outlook 等邮件软件。</p>
+    </div>
+  </dialog>
 
   <script src="assets/app.js"></script>
 </body>

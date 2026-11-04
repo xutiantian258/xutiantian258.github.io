@@ -4,7 +4,7 @@
 
 - 站点地址：`https://xutiantian258.github.io/`
 - 仓库地址：`https://github.com/xutiantian258/xutiantian258.github.io`
-- 购买咨询：`xudadiao102@gmail.com`
+- 购买咨询：`ykxu_1@163.com`
 
 ## 本地预览
 
@@ -23,14 +23,14 @@ python -m http.server 4173 --directory site
 ```js
 const SITE = {
   downloadUrl: "https://github.com/xutiantian258/xutiantian258.github.io/releases/latest",
-  contactEmail: "xudadiao102@gmail.com",
+  contactEmail: "ykxu_1@163.com",
   githubUrl: "https://github.com/xutiantian258/xutiantian258.github.io",
   siteUrl: "https://xutiantian258.github.io"
 };
 ```
 
 - `downloadUrl`：试用版下载地址，当前指向站点仓库的 Releases。`v1.3.0` 安装包已上传，`/releases/latest` 会自动跳到该版本。
-- `contactEmail`：个人版 / 工作室版 / 机构版的购买咨询邮箱。购买按钮会自动带上版本名称和机器码提示。
+- `contactEmail`：个人版 / 工作室版 / 机构版的购买咨询邮箱。点击购买按钮会打开站内联系弹窗，邮箱可一键复制，不再调用 `mailto:` 或 Outlook。
 - `githubUrl`：页脚 GitHub 链接。
 - `siteUrl`：页脚显示的站点地址，同时会更新链接。
 
