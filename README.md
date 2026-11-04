@@ -29,7 +29,7 @@ const SITE = {
 };
 ```
 
-- `downloadUrl`：试用版下载地址，当前指向站点仓库的 Releases。`v1.3.0` 安装包已上传，`/releases/latest` 会自动跳到该版本。
+- `downloadUrl`：试用版下载地址，当前指向站点仓库的 Releases。`v1.4.0` 安装包已上传，`/releases/latest` 会自动跳到该版本。
 - `contactEmail`：个人版 / 工作室版 / 机构版的购买咨询邮箱。点击购买按钮会打开站内联系弹窗，邮箱可一键复制。
 - `assets/wechat-qr.jpg`：联系弹窗中的微信二维码，替换时建议使用正方形图片。
 - `githubUrl`：页脚 GitHub 链接。
@@ -74,7 +74,7 @@ git push -u origin main
 ## 发布清单
 
 - [x] 创建 `xutiantian258.github.io` 仓库
-- [x] 上传 `dist/PDFPlusWatermark-v1.3.0-win64.zip` 到 Releases
+- [x] 上传 `dist/水印溯源-v1.4.0-win64.zip` 到 Releases
 - [x] 推送 `site/` 内容到仓库根目录
 - [x] Pages 选择 `main` / `/(root)`
 - [x] 打开站点检查下载按钮、购买邮件、移动端布局
