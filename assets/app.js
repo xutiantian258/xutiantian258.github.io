@@ -1,6 +1,35 @@
 /* PDF++ 水印工坊 — small, dependency-free page script. */
+
+/* ---------------- 下载配置 ----------------
+   换版本 / 换仓库只改这里，index.html 里的链接会被下面的脚本覆盖。
+
+   Gitee 直链格式：/releases/download/<tag>/<文件名>
+   点击后直接开始下载，不会先跳到发行版页面；国内速度正常。
+   GitHub 只作为备用线路，放在 `fallbackUrl`。 */
+const DOWNLOAD = {
+  giteeRepo: "xutiantian_1/pdfplus-watermark",
+  tag: "v1.5.0",
+  asset: "WatermarkTrace-v1.5.0-win64.zip",
+  size: "71 MB",
+  sha256: "a87b6c09f6ef24c168d8455729e2dfb32ed469a6412352dc7272368c14f570c2",
+  fallbackUrl: "https://github.com/xutiantian258/xutiantian258.github.io/releases/latest"
+};
+
+function giteeDirectUrl() {
+  if (!DOWNLOAD.giteeRepo || !DOWNLOAD.tag || !DOWNLOAD.asset) return "";
+  return (
+    "https://gitee.com/" +
+    DOWNLOAD.giteeRepo +
+    "/releases/download/" +
+    encodeURIComponent(DOWNLOAD.tag) +
+    "/" +
+    encodeURIComponent(DOWNLOAD.asset)
+  );
+}
+
 const SITE = {
-  downloadUrl: "https://github.com/xutiantian258/xutiantian258.github.io/releases/latest",
+  downloadUrl: giteeDirectUrl(),
+  downloadFallbackUrl: DOWNLOAD.fallbackUrl,
   contactEmail: "ykxu_1@163.com",
   githubUrl: "https://github.com/xutiantian258/xutiantian258.github.io",
   siteUrl: "https://xutiantian258.github.io"
@@ -21,11 +50,22 @@ const SITE = {
     window.addEventListener("scroll", setHeaderState, { passive: true });
   }
 
-  /* Download links all point at one configurable URL. */
+  /* Download links all point at the Gitee direct URL (GitHub is the spare line). */
+  const primaryDownload = SITE.downloadUrl || SITE.downloadFallbackUrl;
   document.querySelectorAll("[data-download]").forEach((link) => {
-    link.href = SITE.downloadUrl;
+    link.href = primaryDownload;
     link.target = "_blank";
     link.rel = "noopener";
+  });
+
+  document.querySelectorAll("[data-download-fallback]").forEach((link) => {
+    link.href = SITE.downloadFallbackUrl;
+    link.target = "_blank";
+    link.rel = "noopener";
+  });
+
+  document.querySelectorAll("[data-download-size]").forEach((node) => {
+    if (DOWNLOAD.size) node.textContent = DOWNLOAD.size;
   });
 
   /* GitHub / site links. */

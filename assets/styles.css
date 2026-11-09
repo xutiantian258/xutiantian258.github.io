@@ -420,6 +420,26 @@ kbd {
   background: var(--faint);
 }
 
+.hero-download-note {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.7;
+}
+
+.hero-download-note a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: rgba(23, 24, 26, 0.22);
+  text-underline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .hero-download-note a:hover {
+    color: var(--ink);
+  }
+}
+
 /* ---------- app mock ---------- */
 
 .hero-visual {

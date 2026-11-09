@@ -16,24 +16,71 @@ python -m http.server 4173 --directory site
 
 然后打开 `http://127.0.0.1:4173/`。
 
-## 当前配置
+## 下载线路（Gitee 直链）
 
-所有站点级配置都在 `assets/app.js` 顶部的 `SITE` 对象里：
+安装包放在 Gitee 发行版，站点上的下载按钮直接指向附件直链，点击就开始下载，不经过发行版页面：
+
+```text
+https://gitee.com/xutiantian_1/pdfplus-watermark/releases/download/v1.5.0/WatermarkTrace-v1.5.0-win64.zip
+```
+
+仓库：`https://gitee.com/xutiantian_1/pdfplus-watermark`
+
+下载相关配置集中在 `assets/app.js` 顶部的 `DOWNLOAD` 对象：
+
+```js
+const DOWNLOAD = {
+  giteeRepo: "xutiantian_1/pdfplus-watermark",
+  tag: "v1.5.0",
+  asset: "WatermarkTrace-v1.5.0-win64.zip",
+  size: "71 MB",
+  sha256: "a87b6c09…",
+  fallbackUrl: "https://github.com/xutiantian258/xutiantian258.github.io/releases/latest"
+};
+```
+
+- `giteeRepo` / `tag` / `asset`：三段拼出直链，换版本只改这三个。
+- `size`：页面上的「约 xx MB」。
+- `sha256`：安装包校验值，用户反馈下载损坏时可以对照。
+- `fallbackUrl`：GitHub 备用线路，只出现在首屏「下载不了？用 GitHub 备用」。
+
+其余站点配置仍在 `SITE` 对象里（`downloadUrl` 由上面三项自动拼出来）：
 
 ```js
 const SITE = {
-  downloadUrl: "https://github.com/xutiantian258/xutiantian258.github.io/releases/latest",
+  downloadUrl: giteeDirectUrl(),
+  downloadFallbackUrl: DOWNLOAD.fallbackUrl,
   contactEmail: "ykxu_1@163.com",
   githubUrl: "https://github.com/xutiantian258/xutiantian258.github.io",
   siteUrl: "https://xutiantian258.github.io"
 };
 ```
 
-- `downloadUrl`：试用版下载地址，当前指向站点仓库的 Releases。`v1.5.0` 安装包已上传，`/releases/latest` 会自动跳到该版本。
 - `contactEmail`：个人版 / 工作室版 / 机构版的购买咨询邮箱。点击购买按钮会打开站内联系弹窗，邮箱可一键复制。
 - `assets/wechat-qr.jpg`：联系弹窗中的微信二维码，替换时建议使用正方形图片。
 - `githubUrl`：页脚 GitHub 链接。
 - `siteUrl`：页脚显示的站点地址，同时会更新链接。
+
+### 发新版本
+
+```powershell
+# 1. 打包（生成 dist\WatermarkTrace-vX.Y.Z-win64.zip）
+.\build_exe.ps1 -Zip
+
+# 2. 把 zip 传到 Gitee 发行版，并把直链写回站点配置
+#    先在 Gitee 网页建发行版、拖入 zip；也可以加 -Upload 由脚本自动创建发行版并上传
+$env:GITEE_TOKEN = "你的 Gitee 私人令牌"
+.\tools\publish_gitee.ps1 -Tag v1.6.0
+```
+
+脚本会算好大小和 SHA-256，并把 `giteeRepo / tag / asset / size / sha256` 写回 `assets/app.js`。
+
+Gitee 单个附件上限 100 MB，当前包约 71 MB；超过时改用对象存储或分包。
+
+### 说明
+
+- 站点页面本身仍部署在 GitHub Pages（`xutiantian258.github.io`），只有安装包下载走 Gitee。
+- 仓库里如果还没有对应 tag 的发行版，直链会返回 404，所以顺序是：**先传 Gitee，再推站点**。
 
 `index.html` 里的 canonical、`og:url` 和页脚域名也已同步为 `xutiantian258.github.io`。
 
@@ -74,10 +121,11 @@ git push -u origin main
 ## 发布清单
 
 - [x] 创建 `xutiantian258.github.io` 仓库
-- [x] 上传 `dist/WatermarkTrace-v1.5.0-win64.zip` 到 Releases
-- [x] 推送 `site/` 内容到仓库根目录
+- [x] 在 Gitee 建仓库 `xutiantian_1/pdfplus-watermark`，发行版上传 `WatermarkTrace-v1.5.0-win64.zip`（tag `v1.5.0`）
+- [x] 推送 `site/` 内容到 GitHub 仓库根目录
 - [x] Pages 选择 `main` / `/(root)`
 - [x] 打开站点检查下载按钮、购买邮件、移动端布局
+- [ ] 点一次下载按钮，确认浏览器直接开始下载 zip（不是跳到发行版页面）
 
 ## 文件结构
 
