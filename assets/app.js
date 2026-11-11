@@ -8,10 +8,10 @@
    GitHub 只作为备用线路，放在 `fallbackUrl`。 */
 const DOWNLOAD = {
   giteeRepo: "xutiantian_1/pdfplus-watermark",
-  tag: "v1.5.0",
-  asset: "WatermarkTrace-v1.5.0-win64.zip",
+  tag: "v1.6.0",
+  asset: "WatermarkTrace-v1.6.0-win64.zip",
   size: "71 MB",
-  sha256: "a87b6c09f6ef24c168d8455729e2dfb32ed469a6412352dc7272368c14f570c2",
+  sha256: "518e3ea3c42f36e020a17fd0cd5d9e64b01ef42f9a61e2db72077984385bfb85",
   fallbackUrl: "https://github.com/xutiantian258/xutiantian258.github.io/releases/latest"
 };
 

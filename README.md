@@ -21,7 +21,7 @@ python -m http.server 4173 --directory site
 安装包放在 Gitee 发行版，站点上的下载按钮直接指向附件直链，点击就开始下载，不经过发行版页面：
 
 ```text
-https://gitee.com/xutiantian_1/pdfplus-watermark/releases/download/v1.5.0/WatermarkTrace-v1.5.0-win64.zip
+https://gitee.com/xutiantian_1/pdfplus-watermark/releases/download/v1.6.0/WatermarkTrace-v1.6.0-win64.zip
 ```
 
 仓库：`https://gitee.com/xutiantian_1/pdfplus-watermark`
@@ -31,8 +31,8 @@ https://gitee.com/xutiantian_1/pdfplus-watermark/releases/download/v1.5.0/Waterm
 ```js
 const DOWNLOAD = {
   giteeRepo: "xutiantian_1/pdfplus-watermark",
-  tag: "v1.5.0",
-  asset: "WatermarkTrace-v1.5.0-win64.zip",
+  tag: "v1.6.0",
+  asset: "WatermarkTrace-v1.6.0-win64.zip",
   size: "71 MB",
   sha256: "a87b6c09…",
   fallbackUrl: "https://github.com/xutiantian258/xutiantian258.github.io/releases/latest"
@@ -121,7 +121,7 @@ git push -u origin main
 ## 发布清单
 
 - [x] 创建 `xutiantian258.github.io` 仓库
-- [x] 在 Gitee 建仓库 `xutiantian_1/pdfplus-watermark`，发行版上传 `WatermarkTrace-v1.5.0-win64.zip`（tag `v1.5.0`）
+- [x] 在 Gitee 建仓库 `xutiantian_1/pdfplus-watermark`，发行版上传 `WatermarkTrace-v1.6.0-win64.zip`（tag `v1.6.0`）
 - [x] 推送 `site/` 内容到 GitHub 仓库根目录
 - [x] Pages 选择 `main` / `/(root)`
 - [x] 打开站点检查下载按钮、购买邮件、移动端布局
