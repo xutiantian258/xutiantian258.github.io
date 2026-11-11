@@ -121,7 +121,8 @@ git push -u origin main
 ## 发布清单
 
 - [x] 创建 `xutiantian258.github.io` 仓库
-- [x] 在 Gitee 建仓库 `xutiantian_1/pdfplus-watermark`，发行版上传 `WatermarkTrace-v1.6.0-win64.zip`（tag `v1.6.0`）
+- [x] Gitee 发行版 `v1.6.0` 上传 `WatermarkTrace-v1.6.0-win64.zip`（直链已写回 `assets/app.js`）
+- [x] GitHub 发行版 `v1.6.0` 同步上传同一安装包（首屏「GitHub 备用」线路）
 - [x] 推送 `site/` 内容到 GitHub 仓库根目录
 - [x] Pages 选择 `main` / `/(root)`
 - [x] 打开站点检查下载按钮、购买邮件、移动端布局
