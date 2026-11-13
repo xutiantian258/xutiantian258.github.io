@@ -1,0 +1,16 @@
+{
+  "manifest": 1,
+  "product": "pdfplus-watermark",
+  "version": "1.8.0",
+  "url": "https://gitee.com/xutiantian_1/pdfplus-watermark/releases/download/v1.8.0/WatermarkTrace-v1.8.0-win64.zip",
+  "sha256": "436cd764e8630f14facb28e1ae89e2ac9aea337268a7dcce32776282984f2b38",
+  "size": 71060888,
+  "notes": "新增在线更新：软件内「更多 → 检查更新…」即可下载安装包并自动重启升级；安装包 Ed25519 签名 + SHA-256 双重校验，下载失败可重试；启动后每 24 小时自动检查一次，失败不打扰。",
+  "kind": "zip",
+  "published": "2026-11-13",
+  "mandatory": false,
+  "fallback_urls": [
+    "https://github.com/xutiantian258/xutiantian258.github.io/releases/download/v1.8.0/WatermarkTrace-v1.8.0-win64.zip"
+  ],
+  "signature": "cIw+vg6eD4rG/ttMkuqlWcrZP28KVfv9Ox55GhCO5R+uhMN06i+L82ACJS3VFX2ae//TdHadbf5g4RYzzdorDg=="
+}

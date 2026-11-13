@@ -21,7 +21,7 @@ python -m http.server 4173 --directory site
 安装包放在 Gitee 发行版，站点上的下载按钮直接指向附件直链，点击就开始下载，不经过发行版页面：
 
 ```text
-https://gitee.com/xutiantian_1/pdfplus-watermark/releases/download/v1.7.0/WatermarkTrace-v1.7.0-win64.zip
+https://gitee.com/xutiantian_1/pdfplus-watermark/releases/download/v1.8.0/WatermarkTrace-v1.8.0-win64.zip
 ```
 
 仓库：`https://gitee.com/xutiantian_1/pdfplus-watermark`
@@ -31,8 +31,8 @@ https://gitee.com/xutiantian_1/pdfplus-watermark/releases/download/v1.7.0/Waterm
 ```js
 const DOWNLOAD = {
   giteeRepo: "xutiantian_1/pdfplus-watermark",
-  tag: "v1.7.0",
-  asset: "WatermarkTrace-v1.7.0-win64.zip",
+  tag: "v1.8.0",
+  asset: "WatermarkTrace-v1.8.0-win64.zip",
   size: "71 MB",
   sha256: "a87b6c09…",
   fallbackUrl: "https://github.com/xutiantian258/xutiantian258.github.io/releases/latest"
@@ -70,10 +70,11 @@ const SITE = {
 # 2. 把 zip 传到 Gitee 发行版，并把直链写回站点配置
 #    先在 Gitee 网页建发行版、拖入 zip；也可以加 -Upload 由脚本自动创建发行版并上传
 $env:GITEE_TOKEN = "你的 Gitee 私人令牌"
-.\tools\publish_gitee.ps1 -Tag v1.7.0
+.\tools\publish_gitee.ps1 -Tag v1.8.0
 ```
 
-脚本会算好大小和 SHA-256，并把 `giteeRepo / tag / asset / size / sha256` 写回 `assets/app.js`。
+脚本会算好大小和 SHA-256，并把 `giteeRepo / tag / asset / size / sha256` 写回 `assets/app.js`，
+同时用 `tools/make_update_manifest.py` 生成带 Ed25519 签名的 `update.json`（客户端「检查更新」读它）。
 
 Gitee 单个附件上限 100 MB，当前包约 71 MB；超过时改用对象存储或分包。
 
@@ -121,8 +122,9 @@ git push -u origin main
 ## 发布清单
 
 - [x] 创建 `xutiantian258.github.io` 仓库
-- [x] Gitee 发行版 `v1.7.0` 上传 `WatermarkTrace-v1.7.0-win64.zip`（直链已写回 `assets/app.js`）
-- [x] GitHub 发行版 `v1.7.0` 同步上传同一安装包（首屏「GitHub 备用」线路）
+- [x] Gitee 发行版 `v1.8.0` 上传 `WatermarkTrace-v1.8.0-win64.zip`（直链已写回 `assets/app.js`）
+- [x] GitHub 发行版 `v1.8.0` 同步上传同一安装包（首屏「GitHub 备用」线路）
+- [x] 生成并推送 `update.json`（客户端「检查更新」读它，签名用 `tools/license_private.pem`）
 - [x] 推送 `site/` 内容到 GitHub 仓库根目录
 - [x] Pages 选择 `main` / `/(root)`
 - [x] 打开站点检查下载按钮、购买邮件、移动端布局
